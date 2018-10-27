@@ -21,3 +21,10 @@ android {
 dependencies {
     implementation 'com.startapp:inapp-sdk:3.9.3'
 }
+repositories {
+    jcenter()
+}
+ 
+dependencies {
+    compile 'com.startapp:inapp-sdk:3.10.1'
+}
