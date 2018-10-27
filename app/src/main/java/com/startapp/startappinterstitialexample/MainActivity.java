@@ -78,13 +78,23 @@ public class MainActivity extends Activity {
 	};
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		StartAppSDK.init(this, "ApplicationID", true); //TODO: Replace with your Application ID
-		
-		setContentView(R.layout.activity_main);
-		
-		
+protected void onCreate(Bundle savedInstanceState)
+{
+    super.onCreate(savedInstanceState);
+    StartAppAd.init(this, "162460247", "209768766");
+    setContentView(R.layout.activity_results);
+
+    new Handler().postDelayed(new Runnable()
+    {
+        @Override
+        public void run()
+        {
+            startAppAd.showAd();
+            startAppAd.loadAd();
+        }
+    }, 2000);
+
+}
 		/** Initialize Native Ad views **/
 		imgFreeApp = (ImageView) findViewById(R.id.imgFreeApp);
 		txtFreeApp = (TextView) findViewById(R.id.txtFreeApp);
