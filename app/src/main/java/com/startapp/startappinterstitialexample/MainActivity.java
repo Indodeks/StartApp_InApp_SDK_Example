@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		StartAppSDK.init(this, "ApplicationID", true); //TODO: Replace with your Application ID
+		StartAppSDK.init(this, "209103345", true); //TODO: Replace with your Application ID
 		
 		setContentView(R.layout.activity_main);
 		
