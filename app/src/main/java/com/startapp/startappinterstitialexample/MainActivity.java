@@ -117,7 +117,12 @@ public class MainActivity extends Activity {
      * Initialize the SDK
      */
     private void initStartAppSdk() {
-        StartAppSDK.init(this, "ApplicationID", true); //TODO: Replace with your Application ID
+        StartAppSDK.init(this, "209112279", true);
+        StartAppAd.setAutoInterstitialPreferences(
+                  new AutoInterstitialPreferences()
+                  .setSecondsBetweenAds(30)                  
+           );
+        //TODO: Replace with your Application ID
     }
 
     /**
