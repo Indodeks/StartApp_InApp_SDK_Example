@@ -3,6 +3,14 @@
     package="com.startapp.startappinterstitialexample"
     android:versionCode="3"
     android:versionName="2.4.1" >
+	
+	<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.BLUETOOTH" />
 
     <!-- StartApp required permissions integration -->
     <uses-permission android:name="android.permission.INTERNET" />
