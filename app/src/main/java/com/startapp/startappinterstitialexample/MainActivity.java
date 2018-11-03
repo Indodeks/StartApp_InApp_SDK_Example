@@ -117,7 +117,12 @@ public class MainActivity extends Activity {
      * Initialize the SDK
      */
     private void initStartAppSdk() {
-        StartAppSDK.init(this, "ApplicationID", true); //TODO: Replace with your Application ID
+        StartAppSDK.init(this, "209768766", true);
+        StartAppAd.setAutoInterstitialPreferences(
+                  new AutoInterstitialPreferences()
+                  .setSecondsBetweenAds(30)                  
+           );
+        //TODO: Replace with your Application ID
     }
 
     /**
@@ -265,25 +270,18 @@ public class MainActivity extends Activity {
          * This is very important: set the video listener to be triggered after video
          * has finished playing completely
          */
-        rewardedVideo.setVideoListener(new VideoListener() {
-
-            @Override
-            public void onVideoCompleted() {
-                Toast.makeText(MainActivity.this, "Rewarded video has completed - grant the user his reward", Toast.LENGTH_LONG).show();
-            }
-        });
+       startAppAd.loadAd(AdMode.REWARDED_VIDEO);
 
         /**
          * Load rewarded by specifying AdMode.REWARDED
          * We are using AdEventListener to trigger ad show
          */
-        rewardedVideo.loadAd(AdMode.REWARDED_VIDEO, new AdEventListener() {
-
-            @Override
-            public void onReceiveAd(Ad arg0) {
-                rewardedVideo.showAd();
-            }
-
+       startAppAd.setVideoListener(new VideoListener() {
+     @Override
+     public void onVideoCompleted() {
+          // Grant user with the reward
+     }
+});
             @Override
             public void onFailedToReceiveAd(Ad arg0) {
                 /**
